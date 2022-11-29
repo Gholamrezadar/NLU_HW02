@@ -17,3 +17,5 @@ https://www.depends-on-the-definition.com/tags/named-entity-recognition/
 https://skimai.com/how-to-fine-tune-bert-for-named-entity-recognition-ner/
 https://mccormickml.com/2019/07/22/BERT-fine-tuning/
 https://neptune.ai/blog/how-to-code-bert-using-pytorch-tutorial
+
+https://github.com/monologg/JointBERT
