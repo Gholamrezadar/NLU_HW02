@@ -69,3 +69,4 @@ if __name__ == '__main__':
     # build vocab
     vocab_process('atis', 2)
     vocab_process('snips', 2)
+    vocab_process('nlu', 2)

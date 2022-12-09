@@ -10,3 +10,4 @@
 7	half	weather/find	B-location
 8	moon	weather/find	I-location
 9	bay	weather/find	I-location
+d
