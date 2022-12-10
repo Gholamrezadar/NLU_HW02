@@ -19,3 +19,5 @@ https://mccormickml.com/2019/07/22/BERT-fine-tuning/
 https://neptune.ai/blog/how-to-code-bert-using-pytorch-tutorial
 
 https://github.com/monologg/JointBERT
+
+https://github.com/yinghao1019/Joint_learn

@@ -162,7 +162,7 @@ class PreTrainedTrainer(BaseTrainer):
         elif mode == 'test':
             dataset = self.test_set
         else:
-            raise NameError('Your mode is not exists!')
+            raise NameError('Your mode is not available!')
 
         sampler = SequentialSampler(dataset)
         data_iter = DataLoader(

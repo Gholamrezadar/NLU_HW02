@@ -1,3 +1,10 @@
+## Change the dataset format to a more standard one.
+## Remove duplicate sentences.
+## Extract unique intent_labels, slot_labels and words.
+## Has 3 regions: Train Data, Test Data and Validation Data. try folding them to better understand the code.
+## By Gholamreza Dar Fall 2022
+
+
 #region Train Data
 
 ## Load data
