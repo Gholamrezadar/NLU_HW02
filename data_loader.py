@@ -269,6 +269,7 @@ def convert_to_BertFeatures(data,
 data_processers = {
     'atis': JointProcesser,
     'snips': JointProcesser,
+    'nlu': JointProcesser
 }
 
 

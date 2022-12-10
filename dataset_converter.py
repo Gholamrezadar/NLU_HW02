@@ -63,29 +63,29 @@ word_lists = unique_word_lists
 tag_lists = unique_tag_lists
 
 ## seq.in
-with open('train/seq.in', 'w') as f:
-    for text in texts:
-        f.write(text + '\n')
+with open('data/nlu/train/seq.in', 'w') as f:
+    for word_list in word_lists:
+        f.write(' '.join(word_list) + '\n')
 
 ## labels
-with open('train/labels', 'w') as f:
+with open('data/nlu/train/label', 'w') as f:
     for intent in intents:
         f.write(intent + '\n')
 
 ## seq.out
-with open('train/seq.out', 'w') as f:
+with open('data/nlu/train/seq.out', 'w') as f:
     for tag_list in tag_lists:
         f.write(' '.join(tag_list) + '\n')
 
 ## intent_label
-with open('intent_label.txt', 'w') as f:
+with open('data/nlu/intent_label.txt', 'w') as f:
     unique_intents = list(set(intents))
     f.write("UNK\n")
     for intent in unique_intents:
         f.write(intent + '\n')
 
 ## slot_label
-with open('slot_label.txt', 'w') as f:
+with open('data/nlu/slot_label.txt', 'w') as f:
     unique_tags = list(set([tag for tag_list in tag_lists for tag in tag_list]))
     f.write("PAD\n")
     f.write("UNK\n")
@@ -95,7 +95,7 @@ with open('slot_label.txt', 'w') as f:
         f.write(tag + '\n')
 
 ## word_vocab
-with open('word_vocab.txt', 'w') as f:
+with open('data/nlu/word_vocab.txt', 'w') as f:
     unique_words = list(set([word for word_list in word_lists for word in word_list]))
     f.write("PAD\n")
     f.write("UNK\n")
@@ -163,27 +163,27 @@ word_lists = unique_word_lists
 tag_lists = unique_tag_lists
 
 ## seq.in
-with open('dev/seq.in', 'w') as f:
-    for text in texts:
-        f.write(text + '\n')
+with open('data/nlu/dev/seq.in', 'w') as f:
+    for word_list in word_lists:
+        f.write(' '.join(word_list) + '\n')
 
 ## labels
-with open('dev/labels', 'w') as f:
+with open('data/nlu/dev/label', 'w') as f:
     for intent in intents:
         f.write(intent + '\n')
 
 ## seq.out
-with open('dev/seq.out', 'w') as f:
+with open('data/nlu/dev/seq.out', 'w') as f:
     for tag_list in tag_lists:
         f.write(' '.join(tag_list) + '\n')
 
 ## intent_label
 current_intent_label = []
-with open('intent_label.txt', 'r') as f:
+with open('data/nlu/intent_label.txt', 'r') as f:
     for line in f:
         current_intent_label.append(line.strip())
 
-with open('intent_label.txt', 'a') as f:
+with open('data/nlu/intent_label.txt', 'a') as f:
     unique_intents = list(set(intents))
     for intent in unique_intents:
         if intent not in current_intent_label:
@@ -191,11 +191,11 @@ with open('intent_label.txt', 'a') as f:
 
 ## slot_label
 current_slot_label = []
-with open('slot_label.txt', 'r') as f:
+with open('data/nlu/slot_label.txt', 'r') as f:
     for line in f:
         current_slot_label.append(line.strip())
 
-with open('slot_label.txt', 'a') as f:
+with open('data/nlu/slot_label.txt', 'a') as f:
     unique_tags = list(set([tag for tag_list in tag_lists for tag in tag_list]))
     for tag in unique_tags:
         if tag not in current_slot_label:
@@ -203,11 +203,11 @@ with open('slot_label.txt', 'a') as f:
 
 ## word_vocab
 current_word_vocab = []
-with open('word_vocab.txt', 'r') as f:
+with open('data/nlu/word_vocab.txt', 'r') as f:
     for line in f:
         current_word_vocab.append(line.strip())
 
-with open('word_vocab.txt', 'a') as f:
+with open('data/nlu/word_vocab.txt', 'a') as f:
     unique_words = list(set([word for word_list in word_lists for word in word_list]))
     for word in unique_words:
         if word not in current_word_vocab:
@@ -271,27 +271,27 @@ word_lists = unique_word_lists
 tag_lists = unique_tag_lists
 
 ## seq.in
-with open('test/seq.in', 'w') as f:
-    for text in texts:
-        f.write(text + '\n')
+with open('data/nlu/test/seq.in', 'w') as f:
+    for word_list in word_lists:
+        f.write(' '.join(word_list) + '\n')
 
 ## labels
-with open('test/labels', 'w') as f:
+with open('data/nlu/test/label', 'w') as f:
     for intent in intents:
         f.write(intent + '\n')
 
 ## seq.out
-with open('test/seq.out', 'w') as f:
+with open('data/nlu/test/seq.out', 'w') as f:
     for tag_list in tag_lists:
         f.write(' '.join(tag_list) + '\n')
 
 ## intent_label
 current_intent_label = []
-with open('intent_label.txt', 'r') as f:
+with open('data/nlu/intent_label.txt', 'r') as f:
     for line in f:
         current_intent_label.append(line.strip())
 
-with open('intent_label.txt', 'a') as f:
+with open('data/nlu/intent_label.txt', 'a') as f:
     unique_intents = list(set(intents))
     for intent in unique_intents:
         if intent not in current_intent_label:
@@ -299,11 +299,11 @@ with open('intent_label.txt', 'a') as f:
 
 ## slot_label
 current_slot_label = []
-with open('slot_label.txt', 'r') as f:
+with open('data/nlu/slot_label.txt', 'r') as f:
     for line in f:
         current_slot_label.append(line.strip())
 
-with open('slot_label.txt', 'a') as f:
+with open('data/nlu/slot_label.txt', 'a') as f:
     unique_tags = list(set([tag for tag_list in tag_lists for tag in tag_list]))
     for tag in unique_tags:
         if tag not in current_slot_label:
@@ -311,11 +311,11 @@ with open('slot_label.txt', 'a') as f:
 
 ## word_vocab
 current_word_vocab = []
-with open('word_vocab.txt', 'r') as f:
+with open('data/nlu/word_vocab.txt', 'r') as f:
     for line in f:
         current_word_vocab.append(line.strip())
 
-with open('word_vocab.txt', 'a') as f:
+with open('data/nlu/word_vocab.txt', 'a') as f:
     unique_words = list(set([word for word_list in word_lists for word in word_list]))
     for word in unique_words:
         if word not in current_word_vocab:

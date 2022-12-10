@@ -42,12 +42,12 @@ def main(args):
 if __name__ == '__main__':
     # set run script optinal arg
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data_dir', default='.\data', type=str,
+    parser.add_argument('--data_dir', default='data', type=str,
                         help='Root dir path for save data.Default ./data')
     parser.add_argument('--model_dir', default=None, type=str, required=True,
                         help='Path to save training model.Required Argument.')
-    parser.add_argument('--task', default=None, required=True, choices=['snips', 'atis'],
-                        type=str, help='Select train Model task:[atis,snips].Required Argument.')
+    parser.add_argument('--task', default=None, required=True, choices=['snips', 'atis', 'nlu'],
+                        type=str, help='Select train Model task:[atis,snips,nlu].Required Argument.')
     parser.add_argument('--intent_label_file', default='intent_label.txt',
                         type=str, help='File path for loading intent_label vocab')
     parser.add_argument('--slot_label_file', default='slot_label.txt',

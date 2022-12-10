@@ -261,7 +261,7 @@ class PreTrainedTrainer(BaseTrainer):
 
         for key in sorted(metrics.keys()):
             logger.info(f'{key}={str(metrics[key])}')
-
+        print(">", metrics)
         return metrics
 
     def save_model(self, optimizer, lr_scheduler, global_step):
@@ -296,7 +296,7 @@ class RnnTrainer(BaseTrainer):
         super(RnnTrainer, self).__init__(train_set, eval_set, test_set, args)
 
         # load Model
-        self.config, self.model = MODEL_CLASSES[args.model_type]
+        self.config, _, self.model = MODEL_CLASSES[args.model_type]
         self.config['input_dim'] = len(self.word_vocab)
         self.config['slot_label_nums'] = len(self.slot_vocab)
         self.config['intent_label_nums'] = len(self.intent_vocab)
@@ -400,7 +400,8 @@ class RnnTrainer(BaseTrainer):
 
         for key in sorted(metrics.keys()):
             logger.info(f'{key}={str(metrics[key])}')
-
+        
+        print(">", metrics)
         return metrics
 
     def save_model(self, optimizer, lr_scheduler, global_step):
